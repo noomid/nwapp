@@ -1,0 +1,33 @@
+<div class="login_page">
+	<a class="big_logo" href="#" ng-click="openPartners()"></a>
+	<div class="login_box">
+		<form ng-submit="login()">
+			<div ng-if="user_error" class="big_error">
+				{{user_error}}
+			</div>
+			<div class="input_holder">
+				<label for="user_email">E-mail</label>
+				<input id="user_email" type="text" ng-model="user.email" placeholder="E-mail">
+			</div>
+			<div class="input_holder">
+				<label for="user_password">Пароль</label>
+				<input id="user_password" type="password" ng-model="user.password" placeholder="Пароль">
+			</div>
+			<div class="button_holder">
+				<button class="btn btn_green">Вход</button>
+			</div>
+			<div class="remember">
+				<label ng-click="rememberUser()">
+					<div class="pseudo_checkbox" ng-class="{active: user.remember}">
+
+					</div>
+					<span>Запомнить меня на 24 часа</span>
+				</label>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="page_controls">
+	<div ng-if="current_user.connected" class="status">Подключен к серверу {{settings.get('server')}}<br /><span ng-if="!settings.get('is_production')">DEV MODE</span></div>
+	<div ng-if="!current_user.connected" class="status no_connection">Не подключен к серверу {{settings.get('server')}}<br /><span ng-if="!settings.get('is_production')">DEV MODE</span></div>
+</div>

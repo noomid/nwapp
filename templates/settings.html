@@ -1,0 +1,34 @@
+<div class="inner_page">
+	<div class="user_block">
+		<div class="username">{{current_user.name}}</div>
+		<div class="logout" ng-click="current_user.logout()">
+			<i class="icon icon-logout">
+				<svg>
+					<use xlink:href="#icon-exit"></use>
+				</svg>
+			</i>
+			Выход
+		</div>
+	</div>
+	<div class="tab_trigger">
+		<a class="active" href="#/settings">Общие настройки</a>
+		<a href="#/connection">Выгрузки</a>
+	</div>
+	<div class="tab_content">
+		<div class="toggle_block" ng-repeat="(setting, value) in settings.getApp()">
+			<div ng-click="settings.setApp(setting, !value)" class="switch_label">
+				<div class="toggler" ng-class="{active: value}">
+					<div class="toggle_btn"></div>
+				</div>
+				<div class="toggler_label">
+					{{settings.getAppTitle(setting)}}
+				</div>
+			</div>
+		</div>
+		<br />
+	</div>
+</div>
+<div class="page_controls">
+	<div ng-if="current_user.connected" class="status">Подключен к серверу {{settings.get('server')}}<br /><span ng-if="!settings.get('is_production')">DEV MODE</span></div>
+	<div ng-if="!current_user.connected" class="status no_connection">Не подключен к серверу {{settings.get('server')}}<br /><span ng-if="!settings.get('is_production')">DEV MODE</span></div>
+</div>

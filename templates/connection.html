@@ -1,0 +1,47 @@
+<!-- <div>
+	<label>Server:<input type="text" value="" ng-model="ftp_settings.host" /></label><br />
+	<label>Login:<input type="text" value="" ng-model="ftp_settings.user" /></label><br />
+	<label>Password:<input type="password" value="" ng-model="ftp_settings.password" /></label><br />
+	<label>Local directory:<input type="password" value="" ng-model="local_directory" /></label><br />
+	<button ng-click="test_connect()">Login</button>
+</div> -->
+
+<div class="inner_page">
+	<div class="user_block">
+		<div class="username">{{current_user.name}}</div>
+		<div class="logout" ng-click="current_user.logout()">
+			<i class="icon icon-logout">
+				<svg>
+					<use xlink:href="#icon-exit"></use>
+				</svg>
+			</i>
+			Выход
+		</div>
+	</div>
+	<div class="tab_trigger">
+		<a href="#/settings">Общие настройки</a>
+		<a class="active" href="#/connection">Выгрузки</a>
+	</div>
+	<div class="tab_content">
+		<!-- <div class="input_holder">
+			<label>
+				Логин
+			</label>
+			<input type="text" placeholder="Логин">
+		</div> -->
+		<div class="input_holder">
+			<label>
+				Путь к файлу выгрузки
+			</label>
+			<input type="text" class="file_upload_input" placeholder="Путь" ng-change="changeFtpDir()" ng-model="ftp_dir">
+			<label class="file_label" for="file_upl">
+				Выбрать папку
+			</label>
+			<input type="file" style="display: none" id="file_upl" nwdirectory dirread="ftp_dir" />
+		</div>
+	</div>
+</div>
+<div class="page_controls">
+	<div ng-if="current_user.connected" class="status">Подключен к серверу {{settings.get('server')}}<br /><span ng-if="!settings.get('is_production')">DEV MODE</span></div>
+	<div ng-if="!current_user.connected" class="status no_connection">Не подключен к серверу {{settings.get('server')}}<br /><span ng-if="!settings.get('is_production')">DEV MODE</span></div>
+</div>

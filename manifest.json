@@ -1,0 +1,12 @@
+{
+  "name": "yodapp",
+  "version": "0.0.5",
+  "author": "FORFORCE",
+  "manifestUrl": "/app/manifest.json",
+  "packages": {
+    "win": {
+      "url": "/app/yodapp.zip"
+    }
+  },
+  "notes": "— улучшили механизм отправки файла на сервер\n— если нет прав на удаление файла, проверка папки происходит один раз в 30 мин\n— исправлены ошибки"
+}

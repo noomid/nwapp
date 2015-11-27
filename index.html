@@ -1,0 +1,38 @@
+<html ng-app="yod">
+	<head>
+		<meta charset="UTF-8">
+		<title id="app_title">YOD.app</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/font/font.css">
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/controllers.js"></script>
+		<script type="text/javascript" src="js/factories/yodUpdater.js"></script>
+		<script type="text/javascript" src="js/factories/yodHelper.js"></script>
+		<script type="text/javascript" src="js/factories/yodApp.js"></script>
+		<script type="text/javascript" src="js/factories/yodNotifications.js"></script>
+		<script type="text/javascript" src="js/factories/yodSettings.js"></script>
+		<script type="text/javascript" src="js/factories/yodUser.js"></script>
+		<script type="text/javascript" src="js/factories/yodTray.js"></script>
+		<script type="text/javascript" src="js/factories/yodConnection.js"></script>
+	</head>
+	<body>
+		<svg style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<symbol id="icon-warning" viewBox="0 0 512 512">
+				<path d="M505.499,452.947L281.406,31.196c-13.952-26.263-36.571-26.228-50.523,0.036L6.79,452.929
+			c-13.952,26.263-1.155,47.431,28.585,47.431h441.539C506.653,500.359,519.451,479.209,505.499,452.947z M285.845,440.359h-60v-59
+			h60V440.359z M285.845,356.359h-60v-183h60V356.359z"/>
+			</symbol>
+			<symbol id="icon-exit" viewBox="0 0 15.313 16.406">
+				<path d="M5.177,0.188v1.989h7.958v11.999H5.177v1.99h9.948V0.188H5.177z M4.125,4.167L1.141,7.151L0.146,8.145
+		L1.141,9.14l2.984,2.984V9.14h7.02V7.151h-7.02V4.167z"/>
+			</symbol>
+		</svg>
+		
+    	<div ng-view class="container"></div>
+
+	</body>
+</html>

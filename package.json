@@ -1,0 +1,20 @@
+{
+  	"name": "yodapp",
+  	"main": "index.html",
+  	"version": "0.0.5",
+  	"window": {
+      "title": "YOD.app",
+    	"toolbar": true,
+	    "width": 370,
+	    "height": 570,
+      "resizable": false,
+      "icon": "images/72x72-icon.png"
+  	},
+    "dependencies":{
+      "archiver": "latest",
+      "auto-launch": "latest",
+      "ftp": "latest",
+      "node-webkit-updater": "latest",
+      "nw-notify": "latest"
+    }
+}

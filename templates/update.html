@@ -1,0 +1,18 @@
+<div class="inner_page">
+	<div class="update">
+		<img ng-if="updateRunning" src="images/pp_loader.gif" alt="Loading...">
+		<span ng-if="!updateRunning" class="big_logo"></span>
+	</div>
+	<div class="update_text">
+		<div class="update_title">
+			<span ng-if="updateRunning">Приложение обновляется.</span>
+			<span ng-if="!updateRunning">Приложение готово к обновлению.</span><br>
+			<span ng-if="manifest.hasOwnProperty('version')">В новой версии {{manifest.version}}</span>:
+		</div>
+		<p ng-bind-html="manifest.notes | nl2br"></p>
+	</div>
+
+	<div class="page_controls" ng-if="!updateRunning">
+		<button class="btn btn_green long" ng-click="runInstall()">Установить обновление</button>
+	</div>
+</div>
